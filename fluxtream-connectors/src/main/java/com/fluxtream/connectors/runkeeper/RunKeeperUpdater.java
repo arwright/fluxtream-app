@@ -22,6 +22,8 @@ import org.scribe.model.Verb;
 import org.scribe.oauth.OAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import com.fluxtream.connectors.location.LocationFacet;
+
 
 /**
  *
@@ -29,7 +31,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Updater(prettyName = "RunKeeper", value = 35, updateStrategyType = Connector.UpdateStrategyType.INCREMENTAL,
-         objectTypes = {RunKeeperFitnessActivityFacet.class})
+         objectTypes = {RunKeeperFitnessActivityFacet.class, LocationFacet.class})
 public class RunKeeperUpdater  extends AbstractUpdater {
 
     final String DEFAULT_ENDPOINT= "https://api.runkeeper.com";
